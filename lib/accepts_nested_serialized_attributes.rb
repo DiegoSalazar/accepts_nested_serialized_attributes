@@ -6,9 +6,11 @@ module AcceptsNestedSerializedAttributes
 
     def serializable_hash(options = nil)
       original_serializable_hash(options).tap do |hash|
+        hash.symbolize_keys!
+
         self.class.nested_attributes_options.keys.each do |nested_attributes_key|
           if (records = hash.delete nested_attributes_key)
-            hash["#{nested_attributes_key}_attributes"] = records
+            hash["#{nested_attributes_key}_attributes".to_sym] = records
           end
         end
       end
