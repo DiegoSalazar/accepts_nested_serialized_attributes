@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["diego@greyrobot.com"]
   spec.summary       = %q{Adds support for serializing nested associations that work with accepts_nested_attributes_for.}
   spec.description   = %q{A tiny hack for Rails to make Model#as_json(include: :association) return a hash with association keys suffixed with _attributes.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/DiegoSalazar/accepts_nested_serialized_attributes.git"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
